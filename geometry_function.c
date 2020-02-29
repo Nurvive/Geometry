@@ -1,14 +1,15 @@
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void area_of_circle(float rad)
+void area_of_circle(struct circle Disk)
 {
-    printf("Area = %.3f\n", (3.14 * 2 * rad));
+    printf("Area = %.3f\n", (M_PI * 2 * Disk.radius));
 }
 
-void perimeter_of_circle(float rad)
+void perimeter_of_circle(struct circle Disk)
 {
-    printf("Perimeter = %.3f\n", (pow(rad, 2) * 3.14));
+    printf("Perimeter = %.3f\n", (pow(Disk.radius, 2) * M_PI));
 }
 
 void perimeter_and_area_of_triangle(
@@ -48,12 +49,14 @@ void triangle_checker(
     if ((point1_1 == 0) && (point1_2 == 0) && (point2_1 == 0) && (point2_2 == 0)
         && (point3_1 == 0) && (point3_2 == 0)) {
         printf("Error: Invalid input format \n");
+        exit(1);
     }
 }
 
-void circle_checker(float point1_1, float point1_2, float point2_1)
+void circle_checker(struct circle Disk)
 {
-    if ((point1_1 == 0) && (point1_2 == 0) && (point2_1 == 0)) {
+    if ((Disk.center.point1 == 0) && (Disk.center.point2 == 0) && (Disk.center.radius <= 0) {
         printf("Error: Invalid input format \n");
+        exit(1);
     }
 }
