@@ -1,7 +1,8 @@
+.PHONY: clean all
 all: geom
 
 geom: geometry.o geometry_function.o
-	gcc geometry.o geometry_function.o -o geom -lm
+	gcc geometry.o geometry_function.o -o geom -lm -Wall
 
 geometry_function.o: geometry_function.c
 	gcc -c geometry_function.c
