@@ -1,15 +1,15 @@
 .PHONY: clean all
+CFLAGS = -lm -Wall -Werror
 all: geom
 
 geom: geometry.o geometry_function.o
-	gcc geometry.o geometry_function.o -o geom -lm -Wall
+	gcc geometry.o geometry_function.o -o geom $(CFLAGS)
 
-geometry_function.o: geometry_function.c
-	gcc -c geometry_function.c
+geometry_function.o: src/geometry_function.c
+	gcc -g -c src/geometry_function.c
 
-geometry.o: geometry.c
-	gcc -c geometry.c
-
+geometry.o: src/geometry.c
+	gcc -g -c src/geometry.c
 
 clean:
 	rm -rf *.o geom
