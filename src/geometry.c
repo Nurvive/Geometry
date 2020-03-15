@@ -13,17 +13,6 @@ void circle_checker(circle Disk);
 int main() {
   circle Circle;
   triangle Triangle;
-  Triangle.first_point.x = 0;
-  Triangle.first_point.y = 0;
-  Triangle.second_point.x = 0;
-  Triangle.second_point.y = 0;
-  Triangle.third_point.x = 0;
-  Triangle.third_point.y = 0;
-  Triangle.fourth_point.x = 0;
-  Triangle.fourth_point.y = 0;
-  Circle.center.x = 0;
-  Circle.center.y = 0;
-  Circle.radius = 0;
   char figure_info[40];
   char figure_info_backup[40];
   char name[10];
