@@ -32,15 +32,6 @@ void perimeter_and_area_of_triangle(triangle Delta) {
   }
 }
 
-void triangle_checker(triangle Delta) {
-  if ((Delta.first_point.x == 0) && (Delta.first_point.y == 0) &&
-      (Delta.second_point.x == 0) && (Delta.second_point.y == 0) &&
-      (Delta.third_point.x == 0) && (Delta.third_point.y == 0)) {
-    printf("Error: Invalid input format \n");
-    exit(1);
-  }
-}
-
 void radius_checker(circle Disk) {
   if (Disk.radius <= 0) {
     printf("Error: Radius less or equal to zero \n");
