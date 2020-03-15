@@ -17,6 +17,5 @@ typedef struct triangle {
 void area_of_circle(circle Disk);
 void perimeter_of_circle(circle Disk);
 void perimeter_and_area_of_triangle(triangle Delta);
-void triangle_checker(triangle Delta);
 void radius_checker(circle Disk);
 #endif
