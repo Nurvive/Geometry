@@ -4,12 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void area_of_circle(circle Disk);
-void perimeter_of_circle(circle Disk);
-void perimeter_and_area_of_triangle(triangle Delta);
-void triangle_checker(triangle Delta);
-void circle_checker(circle Disk);
-
 int main() {
   circle Circle;
   triangle Triangle;
@@ -62,6 +56,5 @@ int main() {
   } else {
     printf("Error: unknown figure \n");
   };
-
   return 0;
 }
