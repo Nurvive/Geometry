@@ -1,15 +1,17 @@
-.PHONY: clean all
-CFLAGS = -lm -Wall -Werror
-all: geom
+.PHONY: clean
+OFLAGS = -lm -Wall -Werror
+CFLAGS = -g -c
+VPATH = src
+COMPILER = gcc
 
-geom: geometry.o geometry_function.o
-	gcc geometry.o geometry_function.o -o geom $(CFLAGS)
+bin/geom: build/geometry.o build/geometry_function.o
+	$(COMPILER) $^ -o $@ $(OFLAGS)
 
-geometry_function.o: src/geometry_function.c
-	gcc -g -c src/geometry_function.c
+build/geometry_function.o: geometry_function.c
+	$(COMPILER) $(CFLAGS) $^ -o $@
 
-geometry.o: src/geometry.c
-	gcc -g -c src/geometry.c
+build/geometry.o: geometry.c
+	$(COMPILER) $(CFLAGS)  $^ -o $@
 
 clean:
-	rm -rf *.o geom
+	rm -rf build/*.o bin/geom
